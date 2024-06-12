@@ -1,0 +1,77 @@
+--Gerar 1 pedido com 1 nota fiscal:
+sql
+Copy code
+SELECT 
+    p.id_pedido AS pedido_id,
+    p.data_pedido,
+    c.id_cliente,
+    c.nome_completo AS nome_cliente,
+    f.id_funcionario,
+    f.nome_funcionario AS nome_vendedor,
+    pi.id_pedidoitem,
+    pr.id_produto,
+    pr.nome_produto,
+    pi.quantidade,
+    pi.valor,
+    (pi.quantidade * pi.valor) AS subtotal
+FROM 
+    projeto_final.pedido p
+JOIN projeto_final.cliente c ON p.id_cliente = c.id_cliente
+JOIN projeto_final.pedidoitem pi ON p.id_pedido = pi.id_pedido
+JOIN projeto_final.produto pr ON pi.id_produto = pr.id_produto
+JOIN projeto_final.funcionario f ON p.id_funcionario = f.id_funcionario
+WHERE 
+    p.id_pedido = 1;
+
+
+
+--Gerar 1 pedido com 2 notas fiscais:
+sql
+Copy code
+SELECT 
+    p.id_pedido AS pedido_id,
+    p.data_pedido,
+    c.id_cliente,
+    c.nome_completo AS nome_cliente,
+    f.id_funcionario,
+    f.nome_funcionario AS nome_vendedor,
+    pi.id_pedidoitem,
+    pr.id_produto,
+    pr.nome_produto,
+    pi.quantidade,
+    pi.valor,
+    (pi.quantidade * pi.valor) AS subtotal
+FROM 
+    projeto_final.pedido p
+JOIN projeto_final.cliente c ON p.id_cliente = c.id_cliente
+JOIN projeto_final.pedidoitem pi ON p.id_pedido = pi.id_pedido
+JOIN projeto_final.produto pr ON pi.id_produto = pr.id_produto
+JOIN projeto_final.funcionario f ON p.id_funcionario = f.id_funcionario
+WHERE 
+    p.id_pedido = 1 OR p.id_pedido = 2;
+
+
+--Gerar 1 nota fiscal com 2 pedidos:
+sql
+Copy code
+SELECT 
+    p.id_pedido AS pedido_id,
+    p.data_pedido,
+    c.id_cliente,
+    c.nome_completo AS nome_cliente,
+    f.id_funcionario,
+    f.nome_funcionario AS nome_vendedor,
+    pi.id_pedidoitem,
+    pr.id_produto,
+    pr.nome_produto,
+    pi.quantidade,
+    pi.valor,
+    (pi.quantidade * pi.valor) AS subtotal
+FROM 
+    projeto_final.pedido p
+JOIN projeto_final.cliente c ON p.id_cliente = c.id_cliente
+JOIN projeto_final.pedidoitem pi ON p.id_pedido = pi.id_pedido
+JOIN projeto_final.produto pr ON pi.id_produto = pr.id_produto
+JOIN projeto_final.funcionario f ON p.id_funcionario = f.id_funcionario
+WHERE 
+    pi.id_pedidoitem = 1 OR pi.id_pedidoitem = 2;

@@ -1,0 +1,21 @@
+Exercício 1 - Fixação:
+
+1) Crie uma tabela para armazenar produtos.
+Os produtos devem possuir os seguintes dados:
+
+. Código
+. Descrição
+. Preço de venda
+. Código EAN (13 caracteres)
+. Valor desconto
+. Valor custo
+. Categoria
+. Data de cadastro
+. Data de validade
+
+
+2) Inclua 5 registros nessa tabela com todos os campos informados.
+
+3) Faça consultas na tabela para visualizar todos os dados informados.
+
+4) Faça consultas na tabela, trazendo somente alguns campos específicos.
